@@ -1,4 +1,4 @@
-package com.metalt;
+package com.metalt.model;
 
 public class Person {
 

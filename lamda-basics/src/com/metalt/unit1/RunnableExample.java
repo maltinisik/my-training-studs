@@ -1,4 +1,4 @@
-package com.metalt;
+package com.metalt.unit1;
 
 public class RunnableExample {
 

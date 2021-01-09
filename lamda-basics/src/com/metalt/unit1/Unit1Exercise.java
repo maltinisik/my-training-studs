@@ -1,7 +1,9 @@
-package com.metalt;
+package com.metalt.unit1;
 
 import java.util.Arrays;
 import java.util.List;
+
+import com.metalt.model.Person;
 
 public class Unit1Exercise {
 

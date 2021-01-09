@@ -1,11 +1,14 @@
-package com.metalt;
+package com.metalt.unit2;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.function.Predicate;
 
-public class Unit1ExerciseSolutionJava8 {
+import com.metalt.model.Person;
+
+public class StandartFunctionalInterfacesExample {
 
 	public static void main(String[] args) {
 		List<Person> people = Arrays.asList(
@@ -17,15 +20,15 @@ public class Unit1ExerciseSolutionJava8 {
 
 		Collections.sort(people,(p1,p2)-> p1.getFirstName().compareTo(p2.getFirstName()));
 		
-		printConditinally(people, p-> true);
+		printConditinally(people, p-> true, p -> System.out.println(p));
 		
-		printConditinally(people,p -> p.getLastName().startsWith("S"));
+		printConditinally(people,p -> p.getLastName().startsWith("S"), p -> System.out.println(p.getLastName()));
 	}
 
-	private static void printConditinally(List<Person> people , Predicate<Person> predicate) {
+	private static void printConditinally(List<Person> people , Predicate<Person> predicate,Consumer<Person> consumer) {
 	  for (Person p : people) {
 		if (predicate.test(p)) {
-          System.out.println(p);
+          consumer.accept(p);
 		}
 	  }
 	}
